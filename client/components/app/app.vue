@@ -1,7 +1,8 @@
 <template>
     <div>
         <h1>{{msg}}</h1>
-        <node_form></node_form>
+        <add_user></add_user>
+        <show_user></show_user>
     </div>
 </template>
 <style>
@@ -10,15 +11,17 @@
 
 </style>
 <script>
-    import nodeForm from '../nodeForm/view.vue'
+    import add_user from '../nodeForm/input.vue';
+    import show_user from '../nodeForm/viewShow.vue';
     export default{
         data(){
             return{
-                msg:'hello vue,this is app'
+                msg:'Hello vue,This is app'
             }
         },
         components:{
-            node_form:nodeForm
+            add_user,
+            show_user
         },
 
     }

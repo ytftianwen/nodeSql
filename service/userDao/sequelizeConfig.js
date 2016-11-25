@@ -4,7 +4,7 @@
 const Sequelize = require('sequelize');
 const dbConfig = require('../db/dbConfig');
 
-new Sequelize(
+let sequelize = new Sequelize(
     dbConfig.dbName,
     dbConfig.dbUser,
     dbConfig.dbPW,
@@ -12,10 +12,16 @@ new Sequelize(
         host: dbConfig.dbHost,
         dialect: dbConfig.dbType
     });
-
-const User = new Sequelize({
+let User = sequelize.define('user', {
+    id: {type: Sequelize.INTEGER, autoIncrement: true, primaryKey: true, unique: true},
     name: Sequelize.STRING,
     age: Sequelize.INTEGER
 });
+
+
+// const User = new Sequelize({
+//     name: Sequelize.STRING,
+//     age: Sequelize.INTEGER
+// });
 
 module.exports = User;
