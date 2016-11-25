@@ -1,13 +1,14 @@
 <template>
-    <div id="editUser">
+    <div class="editUser">
         <input type="text" v-model="username" placeholder="输入用户名">
         <input type="text" v-model="userAge" placeholder="输入用户年龄">
         <button id="add" @click="addUser">添加用户</button>
     </div>
 </template>
 <style>
-    body {
-
+    .editUser{
+        padding-top: 10px;
+        padding-bottom: 15px;
     }
 
 </style>
@@ -23,24 +24,18 @@
         data(){
             return {
                 username: '',
-                age: 0
+                userAge: null
             }
-        },
-        created: function () {
-            this.$http.get(url.urlQueryUser).then((data) => {
-                console.log('data=',JSON.stringify(data.body,null,2));
-                store.commit('updateUserData',data.body)
-            })
         },
         methods: {
             addUser(){
                 let params = {
                     name: this.username,
-                    age: this.age
+                    age: this.userAge
                 };
 
-                this.$http.post(url.addUser, params).then((data) => {
-                    store.updateUserData(data);
+                this.$http.post(url.urlAddUser, params).then((data) => {
+                    store.commit('updateUserData',data.body)
                 })
             }
         }

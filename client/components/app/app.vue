@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <h1>{{msg}}</h1>
+    <div class="main">
         <add_user></add_user>
         <show_user></show_user>
     </div>
 </template>
 <style>
-    body{
+    .main{
+        padding: 15px;
     }
 
 </style>

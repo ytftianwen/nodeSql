@@ -6,11 +6,11 @@ import Vue from 'vue';
 
 Vue.use(Vuex);
 const store = new Vuex.Store({
-    state:{
-        userData:[]
+    state: {
+        userData: []
     },
-    mutations:{
-        updateUserData(state,data){
+    mutations: {
+        updateUserData(state, data){
             state.userData = data;
         }
     }

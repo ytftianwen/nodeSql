@@ -10510,7 +10510,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] client\\components\\app\\app.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(26)
+	__vue_template__ = __webpack_require__(23)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10569,7 +10569,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\nbody{\n}\n\n", "", {"version":3,"sources":["/./client/components/app/app.vue?2c50df1c"],"names":[],"mappings":";;;;;;;;AAQA;CACA","file":"app.vue","sourcesContent":["<template>\r\n    <div>\r\n        <h1>{{msg}}</h1>\r\n        <add_user></add_user>\r\n        <show_user></show_user>\r\n    </div>\r\n</template>\r\n<style>\r\n    body{\r\n    }\r\n\r\n</style>\r\n<script>\r\n    import add_user from '../nodeForm/input.vue';\r\n    import show_user from '../nodeForm/viewShow.vue';\r\n    export default{\r\n        data(){\r\n            return{\r\n                msg:'Hello vue,This is app'\r\n            }\r\n        },\r\n        components:{\r\n            add_user,\r\n            show_user\r\n        },\r\n\r\n    }\r\n\r\n</script>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n.main{\n    padding: 15px;\n}\n\n", "", {"version":3,"sources":["/./client/components/app/app.vue?28fb88b2"],"names":[],"mappings":";;;;;;;AAOA;IACA,cAAA;CACA","file":"app.vue","sourcesContent":["<template>\r\n    <div class=\"main\">\r\n        <add_user></add_user>\r\n        <show_user></show_user>\r\n    </div>\r\n</template>\r\n<style>\r\n    .main{\r\n        padding: 15px;\r\n    }\r\n\r\n</style>\r\n<script>\r\n    import add_user from '../nodeForm/input.vue';\r\n    import show_user from '../nodeForm/viewShow.vue';\r\n    export default{\r\n        data(){\r\n            return{\r\n                msg:'Hello vue,This is app'\r\n            }\r\n        },\r\n        components:{\r\n            add_user,\r\n            show_user\r\n        },\r\n\r\n    }\r\n\r\n</script>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10866,21 +10866,21 @@
 	
 	var _input2 = _interopRequireDefault(_input);
 	
-	var _viewShow = __webpack_require__(21);
+	var _viewShow = __webpack_require__(18);
 	
 	var _viewShow2 = _interopRequireDefault(_viewShow);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//     <div>
-	//         <h1>{{msg}}</h1>
+	//     <div class="main">
 	//         <add_user></add_user>
 	//         <show_user></show_user>
 	//     </div>
 	// </template>
 	// <style>
-	//     body{
+	//     .main{
+	//         padding: 15px;
 	//     }
 	//
 	// </style>
@@ -10915,7 +10915,7 @@
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] client\\components\\nodeForm\\input.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(20)
+	__vue_template__ = __webpack_require__(17)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -10974,7 +10974,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\nbody {\n\n}\n\n", "", {"version":3,"sources":["/./client/components/nodeForm/input.vue?0bdec379"],"names":[],"mappings":";;;;;;;;AAQA;;CAEA","file":"input.vue","sourcesContent":["<template>\r\n    <div id=\"editUser\">\r\n        <input type=\"text\" v-model=\"username\" placeholder=\"输入用户名\">\r\n        <input type=\"text\" v-model=\"userAge\" placeholder=\"输入用户年龄\">\r\n        <button id=\"add\" @click=\"addUser\">添加用户</button>\r\n    </div>\r\n</template>\r\n<style>\r\n    body {\r\n\r\n    }\r\n\r\n</style>\r\n<script>\r\n    import Vue from 'vue';\r\n    import vueResource from 'vue-resource';\r\n    import store from '../store/userInfo'\r\n    import url from '../urlConfig';\r\n\r\n    Vue.use(vueResource);\r\n\r\n    export default{\r\n        data(){\r\n            return {\r\n                username: '',\r\n                age: 0\r\n            }\r\n        },\r\n        created: function () {\r\n            this.$http.get(url.urlQueryUser).then((data) => {\r\n                console.log('data=',JSON.stringify(data.body,null,2));\r\n                store.commit('updateUserData',data.body)\r\n            })\r\n        },\r\n        methods: {\r\n            addUser(){\r\n                let params = {\r\n                    name: this.username,\r\n                    age: this.age\r\n                };\r\n\r\n                this.$http.post(url.addUser, params).then((data) => {\r\n                    store.updateUserData(data);\r\n                })\r\n            }\r\n        }\r\n    }\r\n\r\n</script>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n.editUser{\n    padding-top: 10px;\n    padding-bottom: 15px;\n}\n\n", "", {"version":3,"sources":["/./client/components/nodeForm/input.vue?437a69d0"],"names":[],"mappings":";;;;;;;;AAQA;IACA,kBAAA;IACA,qBAAA;CACA","file":"input.vue","sourcesContent":["<template>\r\n    <div class=\"editUser\">\r\n        <input type=\"text\" v-model=\"username\" placeholder=\"输入用户名\">\r\n        <input type=\"text\" v-model=\"userAge\" placeholder=\"输入用户年龄\">\r\n        <button id=\"add\" @click=\"addUser\">添加用户</button>\r\n    </div>\r\n</template>\r\n<style>\r\n    .editUser{\r\n        padding-top: 10px;\r\n        padding-bottom: 15px;\r\n    }\r\n\r\n</style>\r\n<script>\r\n    import Vue from 'vue';\r\n    import vueResource from 'vue-resource';\r\n    import store from '../store/userInfo'\r\n    import url from '../urlConfig';\r\n\r\n    Vue.use(vueResource);\r\n\r\n    export default{\r\n        data(){\r\n            return {\r\n                username: '',\r\n                userAge: null\r\n            }\r\n        },\r\n        methods: {\r\n            addUser(){\r\n                let params = {\r\n                    name: this.username,\r\n                    age: this.userAge\r\n                };\r\n\r\n                this.$http.post(url.urlAddUser, params).then((data) => {\r\n                    store.commit('updateUserData',data.body)\r\n                })\r\n            }\r\n        }\r\n    }\r\n\r\n</script>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
@@ -10989,38 +10989,35 @@
 	    value: true
 	});
 	
-	var _stringify = __webpack_require__(13);
-	
-	var _stringify2 = _interopRequireDefault(_stringify);
-	
 	var _vue = __webpack_require__(1);
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vueResource = __webpack_require__(16);
+	var _vueResource = __webpack_require__(13);
 	
 	var _vueResource2 = _interopRequireDefault(_vueResource);
 	
-	var _userInfo = __webpack_require__(17);
+	var _userInfo = __webpack_require__(14);
 	
 	var _userInfo2 = _interopRequireDefault(_userInfo);
 	
-	var _urlConfig = __webpack_require__(19);
+	var _urlConfig = __webpack_require__(16);
 	
 	var _urlConfig2 = _interopRequireDefault(_urlConfig);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//     <div id="editUser">
+	//     <div class="editUser">
 	//         <input type="text" v-model="username" placeholder="输入用户名">
 	//         <input type="text" v-model="userAge" placeholder="输入用户年龄">
 	//         <button id="add" @click="addUser">添加用户</button>
 	//     </div>
 	// </template>
 	// <style>
-	//     body {
-	//
+	//     .editUser{
+	//         padding-top: 10px;
+	//         padding-bottom: 15px;
 	//     }
 	//
 	// </style>
@@ -11031,25 +11028,19 @@
 	    data: function data() {
 	        return {
 	            username: '',
-	            age: 0
+	            userAge: null
 	        };
 	    },
 	
-	    created: function created() {
-	        this.$http.get(_urlConfig2.default.urlQueryUser).then(function (data) {
-	            console.log('data=', (0, _stringify2.default)(data.body, null, 2));
-	            _userInfo2.default.commit('updateUserData', data.body);
-	        });
-	    },
 	    methods: {
 	        addUser: function addUser() {
 	            var params = {
 	                name: this.username,
-	                age: this.age
+	                age: this.userAge
 	            };
 	
-	            this.$http.post(_urlConfig2.default.addUser, params).then(function (data) {
-	                _userInfo2.default.updateUserData(data);
+	            this.$http.post(_urlConfig2.default.urlAddUser, params).then(function (data) {
+	                _userInfo2.default.commit('updateUserData', data.body);
 	            });
 	        }
 	    }
@@ -11061,29 +11052,6 @@
 
 /***/ },
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(14), __esModule: true };
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(15)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ },
-/* 15 */
-/***/ function(module, exports) {
-
-	var core = module.exports = {version: '2.4.0'};
-	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-
-/***/ },
-/* 16 */
 /***/ function(module, exports) {
 
 	/*!
@@ -12606,7 +12574,7 @@
 	module.exports = plugin;
 
 /***/ },
-/* 17 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12615,7 +12583,7 @@
 	    value: true
 	});
 	
-	var _vuex = __webpack_require__(18);
+	var _vuex = __webpack_require__(15);
 	
 	var _vuex2 = _interopRequireDefault(_vuex);
 	
@@ -12643,7 +12611,7 @@
 	exports.default = store;
 
 /***/ },
-/* 18 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -13176,7 +13144,7 @@
 	})));
 
 /***/ },
-/* 19 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -13187,32 +13155,33 @@
 	/**
 	 * Created by yangtaofeng on 2016/11/24.
 	 */
+	var domainUrl = 'http://127.0.0.1:3000/';
 	var url = {
-	    urlQueryUser: 'http://127.0.0.1:3000/user',
-	    urlAddUser: 'http://127.0.0.1:3000/user',
-	    urlDeleteUser: 'http://127.0.0.1:3000/user'
+	    urlQueryUser: domainUrl + 'user',
+	    urlAddUser: domainUrl + 'user/addUser',
+	    urlDeleteUser: domainUrl + 'user/deleteUser'
 	};
 	exports.default = url;
 
 /***/ },
-/* 20 */
+/* 17 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div id=\"editUser\">\n    <input type=\"text\" v-model=\"username\" placeholder=\"输入用户名\">\n    <input type=\"text\" v-model=\"userAge\" placeholder=\"输入用户年龄\">\n    <button id=\"add\" @click=\"addUser\">添加用户</button>\n</div>\n";
+	module.exports = "\n<div class=\"editUser\">\n    <input type=\"text\" v-model=\"username\" placeholder=\"输入用户名\">\n    <input type=\"text\" v-model=\"userAge\" placeholder=\"输入用户年龄\">\n    <button id=\"add\" @click=\"addUser\">添加用户</button>\n</div>\n";
 
 /***/ },
-/* 21 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_script__, __vue_template__
 	var __vue_styles__ = {}
-	__webpack_require__(22)
-	__vue_script__ = __webpack_require__(24)
+	__webpack_require__(19)
+	__vue_script__ = __webpack_require__(21)
 	if (__vue_script__ &&
 	    __vue_script__.__esModule &&
 	    Object.keys(__vue_script__).length > 1) {
 	  console.warn("[vue-loader] client\\components\\nodeForm\\viewShow.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(25)
+	__vue_template__ = __webpack_require__(22)
 	module.exports = __vue_script__ || {}
 	if (module.exports.__esModule) module.exports = module.exports.default
 	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
@@ -13237,13 +13206,13 @@
 	})()}
 
 /***/ },
-/* 22 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(23);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(7)(content, {});
@@ -13263,7 +13232,7 @@
 	}
 
 /***/ },
-/* 23 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(6)();
@@ -13271,13 +13240,13 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nbody {\n\n}\n", "", {"version":3,"sources":["/./client/components/nodeForm/viewShow.vue?21c8561f"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;AAmBA;;CAEA","file":"viewShow.vue","sourcesContent":["<template>\r\n    <div>\r\n        <table>\r\n            <tr>\r\n                <th>姓名</th>\r\n                <th>年龄</th>\r\n                <th>id</th>\r\n                <th>操作</th>\r\n            </tr>\r\n            <tr v-for=\"item in userData\">\r\n                <td v-text=\"item.name\"></td>\r\n                <td v-text=\"item.age\"></td>\r\n                <td v-text=\"item.id\"></td>\r\n                <td><a title=\"删除用户:{{item.name}}\" @click=\"deleteUser(item.id)\">×</a></td>\r\n            </tr>\r\n        </table>\r\n    </div>\r\n</template>\r\n<style>\r\n    body {\r\n\r\n    }\r\n</style>\r\n<script>\r\n    import Vue from 'vue';\r\n    import vueResource from 'vue-resource';\r\n    import store from '../store/userInfo';\r\n    import url from '../urlConfig';\r\n\r\n\r\n    Vue.use(vueResource);\r\n\r\n    export default{\r\n        data(){\r\n            return {}\r\n        },\r\n        created: function () {\r\n            this.$http.get(url.urlQueryUser).then((data) => {\r\n                store.commit('updateUserData',data.body);\r\n            })\r\n        },\r\n        computed: {\r\n            userData(){\r\n                return store.state.userData\r\n            }\r\n        },\r\n        methods: {\r\n            deleteUser(id){\r\n                this.$http.post(url.urlDeleteUser, {id: id}).then((data) => {\r\n                    store.updateUserData(data);\r\n                })\r\n            }\r\n        }\r\n\r\n    }\r\n</script>\r\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.show-view{\n    width: 500px;\n}\n.show-table{\n    width: 100%;\n    border-collapse: collapse;\n}\n.show-table tr{\n    width: 100%;\n}\n.show-table td{\n    border: 1px solid #888888;\n    text-align: center;\n}\n", "", {"version":3,"sources":["/./client/components/nodeForm/viewShow.vue?3fc1fee4"],"names":[],"mappings":";;;;;;;;;;;;;;;;;;;AAmBA;IACA,aAAA;CACA;AACA;IACA,YAAA;IACA,0BAAA;CACA;AACA;IACA,YAAA;CACA;AACA;IACA,0BAAA;IACA,mBAAA;CACA","file":"viewShow.vue","sourcesContent":["<template>\r\n    <div class=\"show-view\">\r\n        <table class=\"show-table\">\r\n            <tr>\r\n                <th>姓名</th>\r\n                <th>年龄</th>\r\n                <th>id</th>\r\n                <th>操作</th>\r\n            </tr>\r\n            <tr v-for=\"item in userData\">\r\n                <td v-text=\"item.name\"></td>\r\n                <td v-text=\"item.age\"></td>\r\n                <td v-text=\"item.id\"></td>\r\n                <td><a title=\"删除用户:{{item.name}}\" @click=\"deleteUser(item.id)\">×</a></td>\r\n            </tr>\r\n        </table>\r\n    </div>\r\n</template>\r\n<style>\r\n    .show-view{\r\n        width: 500px;\r\n    }\r\n    .show-table{\r\n        width: 100%;\r\n        border-collapse: collapse;\r\n    }\r\n    .show-table tr{\r\n        width: 100%;\r\n    }\r\n    .show-table td{\r\n        border: 1px solid #888888;\r\n        text-align: center;\r\n    }\r\n</style>\r\n<script>\r\n    import Vue from 'vue';\r\n    import vueResource from 'vue-resource';\r\n    import store from '../store/userInfo';\r\n    import url from '../urlConfig';\r\n\r\n\r\n    Vue.use(vueResource);\r\n\r\n    export default{\r\n        data(){\r\n            return {}\r\n        },\r\n        created: function () {\r\n            this.$http.get(url.urlQueryUser).then((data) => {\r\n                store.commit('updateUserData',data.body);\r\n            })\r\n        },\r\n        computed: {\r\n            userData(){\r\n                return store.state.userData\r\n            }\r\n        },\r\n        methods: {\r\n            deleteUser(id){\r\n                this.$http.post(url.urlDeleteUser, {id: id}).then((data) => {\r\n                    store.commit('updateUserData',data.body);\r\n                })\r\n            }\r\n        }\r\n\r\n    }\r\n</script>\r\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ },
-/* 24 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -13290,23 +13259,23 @@
 	
 	var _vue2 = _interopRequireDefault(_vue);
 	
-	var _vueResource = __webpack_require__(16);
+	var _vueResource = __webpack_require__(13);
 	
 	var _vueResource2 = _interopRequireDefault(_vueResource);
 	
-	var _userInfo = __webpack_require__(17);
+	var _userInfo = __webpack_require__(14);
 	
 	var _userInfo2 = _interopRequireDefault(_userInfo);
 	
-	var _urlConfig = __webpack_require__(19);
+	var _urlConfig = __webpack_require__(16);
 	
 	var _urlConfig2 = _interopRequireDefault(_urlConfig);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// <template>
-	//     <div>
-	//         <table>
+	//     <div class="show-view">
+	//         <table class="show-table">
 	//             <tr>
 	//                 <th>姓名</th>
 	//                 <th>年龄</th>
@@ -13323,8 +13292,19 @@
 	//     </div>
 	// </template>
 	// <style>
-	//     body {
-	//
+	//     .show-view{
+	//         width: 500px;
+	//     }
+	//     .show-table{
+	//         width: 100%;
+	//         border-collapse: collapse;
+	//     }
+	//     .show-table tr{
+	//         width: 100%;
+	//     }
+	//     .show-table td{
+	//         border: 1px solid #888888;
+	//         text-align: center;
 	//     }
 	// </style>
 	// <script>
@@ -13348,7 +13328,7 @@
 	    methods: {
 	        deleteUser: function deleteUser(id) {
 	            this.$http.post(_urlConfig2.default.urlDeleteUser, { id: id }).then(function (data) {
-	                _userInfo2.default.updateUserData(data);
+	                _userInfo2.default.commit('updateUserData', data.body);
 	            });
 	        }
 	    }
@@ -13359,16 +13339,16 @@
 	/* generated by vue-loader */
 
 /***/ },
-/* 25 */
+/* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n    <table>\n        <tr>\n            <th>姓名</th>\n            <th>年龄</th>\n            <th>id</th>\n            <th>操作</th>\n        </tr>\n        <tr v-for=\"item in userData\">\n            <td v-text=\"item.name\"></td>\n            <td v-text=\"item.age\"></td>\n            <td v-text=\"item.id\"></td>\n            <td><a title=\"删除用户:{{item.name}}\" @click=\"deleteUser(item.id)\">×</a></td>\n        </tr>\n    </table>\n</div>\n";
+	module.exports = "\n<div class=\"show-view\">\n    <table class=\"show-table\">\n        <tr>\n            <th>姓名</th>\n            <th>年龄</th>\n            <th>id</th>\n            <th>操作</th>\n        </tr>\n        <tr v-for=\"item in userData\">\n            <td v-text=\"item.name\"></td>\n            <td v-text=\"item.age\"></td>\n            <td v-text=\"item.id\"></td>\n            <td><a title=\"删除用户:{{item.name}}\" @click=\"deleteUser(item.id)\">×</a></td>\n        </tr>\n    </table>\n</div>\n";
 
 /***/ },
-/* 26 */
+/* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "\n<div>\n    <h1>{{msg}}</h1>\n    <add_user></add_user>\n    <show_user></show_user>\n</div>\n";
+	module.exports = "\n<div class=\"main\">\n    <add_user></add_user>\n    <show_user></show_user>\n</div>\n";
 
 /***/ }
 /******/ ]);

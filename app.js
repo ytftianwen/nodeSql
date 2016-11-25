@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 
-//设置api请求路径,例 http:127.0.0.1/addUser请求数据接口
+//设置api请求路径,例 http:127.0.0.1/user/addUser请求数据接口
 app.use('/user', apiUser);
 
 
